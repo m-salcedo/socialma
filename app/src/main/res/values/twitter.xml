@@ -11,4 +11,8 @@
     <dimen name="tw__login_btn_right_padding">14dp</dimen>
     <dimen name="tw__login_btn_text_size">7sp</dimen>
     <string name="tw__login_btn_txt">Log in with Twitter</string>
+
+    <dimen name="tw__text_size_large">12sp</dimen>
+    <dimen name="tw__text_size_medium">10sp</dimen>
+    <dimen name="tw__text_size_small">8sp</dimen>
 </resources>

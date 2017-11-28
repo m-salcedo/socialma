@@ -37,7 +37,6 @@ class TwitterListPresenter(
     }
 
     private fun loginTwitter(twitterSession: TwitterSession) {
-        Log.d("TAG__", "antes de guardar")
         view.showProgress(R.string.loading)
         val auth = Auth(model.getTokenInsta(),
                 twitterSession.authToken.token,
@@ -50,9 +49,7 @@ class TwitterListPresenter(
                 .subscribe({ success() },
                         { failed(it) })
         compositeDisposable.add(disposable)
-
     }
-
 
     private fun success() {
         view.hideProgress()

@@ -4,7 +4,6 @@ import com.msalcedo.socialma.common.mvp.ErrorMessageFactory
 import com.msalcedo.socialma.common.mvp.MVPContract
 import com.msalcedo.socialma.common.storage.Auth
 import com.msalcedo.socialma.common.storage.instagram.MediaRecent
-import com.twitter.sdk.android.tweetui.UserTimeline
 import io.reactivex.Completable
 import io.reactivex.Observable
 

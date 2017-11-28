@@ -28,25 +28,9 @@ class TwitterListView(
     override var loginTwitterObservable: Observable<TwitterSession>? = null
 
     override fun createAdapter(userTimeLine: UserTimeline) {
-        Log.d("TAG__", "loadGrid")
-
-        val actionCallback = object : Callback<Tweet>() {
-            override fun success(result: Result<Tweet>) {
-                Log.d("TAG__", StringHelper().toString(result))
-            }
-
-            override fun failure(exception: TwitterException) {
-                if (exception is TwitterAuthException) {
-                    Log.e("TAG__", "TwitterAuthException")
-                }
-
-                Log.d("TAG__", StringHelper().toString(exception), exception)
-            }
-        }
 
         val adapter = TweetTimelineListAdapter.Builder(activity)
                 .setTimeline(userTimeLine)
-                .setOnActionCallback(actionCallback)
                 .build()
 
         twitterList.adapter = adapter
@@ -54,23 +38,19 @@ class TwitterListView(
     }
 
     private fun getTwitterRx(): Observable<TwitterSession> {
-        Log.d("TAG__", "antes de getTwitterRx")
 
         return Observable.create { subscriber ->
 
             if (Application.component.twitterSession().authToken.secret != null) {
                 TwitterCore.getInstance().sessionManager.clearActiveSession()
             }
-            Log.d("TAG__", "antes de regis")
 
             btnTwitter.callback = object : Callback<TwitterSession>() {
                 override fun success(result: Result<TwitterSession>) {
-                    Log.d("TAG__", "antes de onNext")
                     subscriber.onNext(result.data)
                 }
 
                 override fun failure(exception: TwitterException) {
-                    Log.e("TAG__", "antes de onNext")
                     subscriber.onError(exception)
                 }
 

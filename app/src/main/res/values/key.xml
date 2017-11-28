@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Socialma</string>
+
+    <string name="TWITTER_CONSUMER_KEY">vUspmd6x5XXKolUFHRQ47iCNp</string>
+    <string name="TWITTER_CONSUMER_SECRET">	ydajkmu0YKAeICkagxkLpxXC0AK4zkQ3KARI6QjkDVwW3Tfgm2</string>
+
+    <string name="url_api_current">https://api.instagram.com</string>
+
+</resources>

@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Socialma</string>
+
+    <string name="navigation_drawer_open">Abrir navigation drawer</string>
+    <string name="navigation_drawer_close">Cerrar navigation drawer</string>
+
+    <string name="splash_title">Socialma</string>
+    <string name="splash_subtitle">App de prueba 2 - koggi</string>
+
+    <string name="title_activity_login">LoginActivity</string>
+
+    <string name="menu_twitter">Twitter</string>
+    <string name="menu_gallery">Instagram</string>
+    <string name="menu_settings">Configuracion</string>
+
+    <string name="permissions_denied_title">Permisos denegados</string>
+    <string name="alert_permissions_denied">Sin estos permisos la aplicación no funcionara correctamente.</string>
+
+    <string name="loading">Cargando…</string>
+
+    <string name="ig__login_btn_txt">Iniciar sesión con Instagram</string>
+    <string name="title_twitter">Twitter</string>
+    <string name="title_instagram">Instagram</string>
+    <string name="empty_login">Por favor, para ver esta sección es requerido que inicie sesión</string>
+
+
+</resources>

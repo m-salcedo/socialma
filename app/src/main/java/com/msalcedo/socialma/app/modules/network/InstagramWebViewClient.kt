@@ -1,15 +1,12 @@
 package com.msalcedo.socialma.app.modules.network
 
-import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Build
-import android.util.Log
 import android.webkit.WebResourceError
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
-import android.widget.Toast
 import com.msalcedo.socialma.login.InstagramLoginActivity
 import com.msalcedo.socialma.utils.Constant
 

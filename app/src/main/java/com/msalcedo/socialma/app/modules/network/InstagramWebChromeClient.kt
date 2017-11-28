@@ -15,7 +15,5 @@ class InstagramWebChromeClient : WebChromeClient() {
 
     override fun onProgressChanged(view: WebView, newProgress: Int) {
         super.onProgressChanged(view, newProgress)
-        Log.d(TAG, "onProgressChanged ${view.url}")
-
     }
 }

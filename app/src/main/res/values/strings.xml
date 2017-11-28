@@ -1,33 +1,27 @@
 <resources>
     <string name="app_name">Socialma</string>
 
-    <string name="TWITTER_CONSUMER_KEY">vUspmd6x5XXKolUFHRQ47iCNp</string>
-    <string name="TWITTER_CONSUMER_SECRET">	ydajkmu0YKAeICkagxkLpxXC0AK4zkQ3KARI6QjkDVwW3Tfgm2</string>
-
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-
     <string name="splash_title">Socialma</string>
-    <string name="splash_subtitle">App de prueba 2 - koggi</string>
+    <string name="splash_subtitle">Test app 2 - koggi</string>
 
     <string name="title_activity_login">LoginActivity</string>
 
     <string name="menu_twitter">Twitter</string>
     <string name="menu_gallery">Instagram</string>
-    <string name="menu_settings">Configuracion</string>
+    <string name="menu_settings">Settings</string>
 
-    <string name="url_api_current">https://api.instagram.com</string>
+    <string name="permissions_denied_title">Denied permissions</string>
+    <string name="alert_permissions_denied">Without these permissions the application does not work correctly.</string>
 
-    <string name="permissions_denied_title">Permisos denegados</string>
-    <string name="alert_permissions_denied">Sin estos permisos la aplicación no funcionara correctamente.</string>
+    <string name="loading">Loading…</string>
 
-    <string name="loading">Cargando…</string>
-
-    <string name="ig__login_btn_txt">Iniciar sesión con Instagram</string>
+    <string name="ig__login_btn_txt">Log in with Instagram</string>
     <string name="title_twitter">Twitter</string>
     <string name="title_instagram">Instagram</string>
-    <string name="empty_login">Por favor, para ver esta sección es requerido que inicie sesión</string>
+    <string name="empty_login">Please, to see this section you are required to log in</string>
 
 
 </resources>
