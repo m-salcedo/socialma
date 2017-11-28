@@ -28,6 +28,7 @@ class InstagramPresenter(
     override fun initView() {
 
         if (model.isInstagram()) {
+            Log.d("TAG__", "entro a instagram")
             view.setAvatar(model.getAvatar())
             view.setPosts(model.getPosts())
             view.setFollowedBy(model.getFollowedBy())
@@ -45,10 +46,10 @@ class InstagramPresenter(
             compositeDisposable.add(disposable)
             view.hideEmptyLogin()
         } else {
+            Log.d("TAG__", "instagram no iniciado")
             view.showEmptyLogin()
             compositeDisposable.add(view.loginInstagramObservable!!.subscribe { loginInstagram() })
         }
-
     }
 
     override fun setInstagramToken(accessToken: String?) {
@@ -70,7 +71,6 @@ class InstagramPresenter(
     }
 
     private fun loginInstagram() {
-        Log.d(TAG, "login to ig")
         view.startInstagram()
     }
 

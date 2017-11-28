@@ -22,6 +22,7 @@
     <string name="title_twitter">Twitter</string>
     <string name="title_instagram">Instagram</string>
     <string name="empty_login">Please, to see this section you are required to log in</string>
+    <string name="splash_bottom">(c) 2017 m-salcedo</string>
 
 
 </resources>

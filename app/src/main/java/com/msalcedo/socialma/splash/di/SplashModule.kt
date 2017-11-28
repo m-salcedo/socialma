@@ -1,5 +1,7 @@
 package com.msalcedo.socialma.splash.di
 
+import com.msalcedo.socialma.app.modules.api.MyTwitterApiClient
+import com.msalcedo.socialma.app.modules.api.UserApi
 import com.msalcedo.socialma.common.storage.SessionManager
 import com.msalcedo.socialma.splash.SplashActivity
 import com.msalcedo.socialma.splash.mvp.SplashContract
@@ -35,6 +37,9 @@ class SplashModule(private val activity: SplashActivity) {
     @SplashScope
     fun provideModel(
             activity: SplashActivity,
-            sessionManager: SessionManager): SplashContract.Model =
-            SplashModel(activity = activity, sessionManager = sessionManager)
+            sessionManager: SessionManager,
+            userApi: UserApi,
+            myTwitterApiClient: MyTwitterApiClient): SplashContract.Model =
+            SplashModel(activity = activity, sessionManager = sessionManager,
+                    userApi = userApi, myTwitterApiClient = myTwitterApiClient)
 }

@@ -1,18 +1,14 @@
 package com.msalcedo.socialma.home.instagram.utils
 
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.ProgressBar
 import com.msalcedo.socialma.R
 import com.msalcedo.socialma.common.storage.instagram.Datum
+import com.msalcedo.socialma.home.instagram.mvp.view.GridItemView
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
-import java.util.*
-import kotlin.collections.ArrayList
 
 
 /**
@@ -29,8 +25,6 @@ class GridAdapter(listener: OnGridListener, val picasso: Picasso) : RecyclerView
         val holder = holder as ViewHolder
         val item = mItems[position]
 
-        Log.d(TAG, "position $position")
-
         picasso.load(item.images!!.thumbnail!!.url.toString()) // thumbnail url goes here
                 .placeholder(R.drawable.ic_placeholder_square)
                 .into(holder.ivImage, object : Callback {
@@ -38,7 +32,7 @@ class GridAdapter(listener: OnGridListener, val picasso: Picasso) : RecyclerView
                     }
 
                     override fun onSuccess() {
-                        picasso.load(item.images!!.lowResolution!!.url) // image url goes here
+                        picasso.load(item.images!!.standardResolution!!.url) // image url goes here
                                 .placeholder(holder.ivImage!!.drawable)
                                 .into(holder.ivImage)
                     }
@@ -58,7 +52,7 @@ class GridAdapter(listener: OnGridListener, val picasso: Picasso) : RecyclerView
 
     class ViewHolder(view: View?) : RecyclerView.ViewHolder(view) {
         private val root = view
-        val ivImage: ImageView? = root?.findViewById(R.id.gridImageView)
+        val ivImage: GridItemView? = root?.findViewById(R.id.gridImageView)
     }
 
     fun add(items: ArrayList<Datum>) {

@@ -1,7 +1,5 @@
 package com.msalcedo.socialma.home.base.mvp
 
-import android.content.Intent
-import android.view.MenuItem
 import com.msalcedo.socialma.common.mvp.ErrorMessageFactory
 import com.msalcedo.socialma.common.mvp.MVPContract
 

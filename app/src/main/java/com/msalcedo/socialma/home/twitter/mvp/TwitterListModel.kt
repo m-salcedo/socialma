@@ -52,7 +52,6 @@ class TwitterListModel(
                         if (it.isSuccessful) {
                             sessionManager.auth = auth
                             sessionManager.userTwitter = it.body()
-                            Log.d("here", StringHelper().toString(it.body()))
                         }
                     }
                     .toCompletable()

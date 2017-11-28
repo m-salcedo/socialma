@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.view.GravityCompat
 import android.text.TextUtils
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import com.msalcedo.socialma.R
@@ -42,6 +43,7 @@ class HomeActivity : RxActivity(), HomeContract.View.DrawerListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        overridePendingTransition(R.anim.no_anim, R.anim.no_anim)
         initializeComponent()
         setContentView(view.inflateLayout())
         presenter.onCreate()

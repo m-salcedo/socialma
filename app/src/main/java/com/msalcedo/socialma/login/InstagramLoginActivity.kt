@@ -3,6 +3,7 @@ package com.msalcedo.socialma.login
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.webkit.CookieManager
 import android.webkit.CookieSyncManager
 import android.widget.Toast
@@ -35,6 +36,7 @@ class InstagramLoginActivity : RxActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        overridePendingTransition(R.anim.slide_enter_bottom, R.anim.no_anim)
         setContentView(R.layout.activity_login_instagram)
 
         initWebView()
@@ -47,10 +49,6 @@ class InstagramLoginActivity : RxActivity() {
         webView.clearCache(true)
         webView.webViewClient = instagramClient
         webView.webChromeClient = InstagramWebChromeClient()
-
-        CookieSyncManager.createInstance(this)
-        val cookieManager = CookieManager.getInstance()
-        cookieManager.removeAllCookie()
         webView.loadUrl(Constant.Url.Instagram.AUTH)
     }
 
@@ -72,5 +70,10 @@ class InstagramLoginActivity : RxActivity() {
             setResult(Activity.RESULT_OK)
         }
         finish()
+    }
+
+    override fun finish() {
+        super.finish()
+        overridePendingTransition(R.anim.no_anim, R.anim.slide_exit_bottom)
     }
 }

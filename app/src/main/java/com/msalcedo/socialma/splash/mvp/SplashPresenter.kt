@@ -1,8 +1,14 @@
 package com.msalcedo.socialma.splash.mvp
 
 import android.util.Log
-import com.msalcedo.socialma.app.Application
+import com.msalcedo.socialma.utils.StringHelper
+import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.schedulers.Schedulers
+import android.R.attr.delay
+import io.reactivex.Observable
+import java.util.concurrent.TimeUnit
+
 
 /**
  * Created by Mariangela Salcedo (msalcedo047@gmail.com) on 11/25/17.
@@ -16,14 +22,30 @@ class SplashPresenter(
 
     override fun onCreate() {
         if (model.isLoggedIn) {
-            Log.d("TAG__", "session iniciada  " + Application.component.sessionManager().auth)
-
-
-            model.startHomeActivity()
+            refreshData()
         } else {
-            Log.d("TAG__", "session cerrada " + Application.component.sessionManager().auth)
-            model.startLoginActivity()
+            startLogin()
         }
+    }
+
+    private fun startLogin() {
+        Observable.just(true).delay(2000, TimeUnit.MILLISECONDS)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe({ model.startLoginActivity() })
+    }
+
+    private fun refreshData() {
+        val disposable = model.authTwitter()
+                .andThen(model.authInstagram())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe({
+                    model.startHomeActivity()
+                }, {
+                    model.startLoginActivity()
+                })
+        compositeDisposable.add(disposable)
     }
 
     override fun onDestroy() {

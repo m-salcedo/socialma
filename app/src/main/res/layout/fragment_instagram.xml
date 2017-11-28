@@ -12,6 +12,7 @@
         android:layout_height="match_parent">
 
         <android.support.v4.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -19,7 +20,8 @@
                 android:id="@+id/relLayoutCenter"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_alignParentTop="true">
+                android:layout_alignParentTop="true"
+                android:descendantFocusability="blocksDescendants">
 
                 <include layout="@layout/layout_center_profile" />
 

@@ -99,6 +99,7 @@ class InstagramView(
         uiListener.inflated()
         adapter = GridAdapter(this, picasso)
         gridView.layoutManager = GridLayoutManager(activity, 3, GridLayoutManager.VERTICAL, false)
+        gridView.isNestedScrollingEnabled = false
         gridView.adapter = adapter
         return root
     }

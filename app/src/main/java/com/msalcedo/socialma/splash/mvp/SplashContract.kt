@@ -1,6 +1,7 @@
 package com.msalcedo.socialma.splash.mvp
 
 import com.msalcedo.socialma.common.mvp.MVPContract
+import com.msalcedo.socialma.common.storage.Auth
 import io.reactivex.Completable
 
 /**
@@ -15,6 +16,8 @@ class SplashContract {
 
     interface Model: MVPContract.Model {
         val isLoggedIn: Boolean
+        fun authInstagram(): Completable
+        fun authTwitter(): Completable
         fun startHomeActivity()
         fun startLoginActivity()
     }
