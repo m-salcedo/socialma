@@ -134,7 +134,9 @@ class HomeActivity : RxActivity(), HomeContract.View.DrawerListener {
         super.onActivityResult(requestCode, resultCode, data)
         if (twitterListFragment != null) {
             twitterListFragment!!.onActivityResult(requestCode, resultCode, data)
-        } else if (instagramFragment != null) {
+        }
+
+        if (instagramFragment != null) {
             instagramFragment!!.onActivityResult(requestCode, resultCode, data)
         }
     }
