@@ -19,7 +19,6 @@ class TwitterListPresenter(
     private val compositeDisposable = CompositeDisposable()
 
     override fun onCreate() {
-        compositeDisposable.add(view.loginTwitterObservable.subscribe({ twitterSession -> loginTwitter(twitterSession) }))
     }
 
     override fun onDestroy() {
@@ -32,6 +31,8 @@ class TwitterListPresenter(
             view.hideEmptyLogin()
         } else {
             view.showEmptyLogin()
+            compositeDisposable.add(view.loginTwitterObservable!!
+                    .subscribe({ twitterSession -> loginTwitter(twitterSession) }))
         }
     }
 

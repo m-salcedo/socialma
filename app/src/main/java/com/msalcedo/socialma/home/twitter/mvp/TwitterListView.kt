@@ -25,7 +25,7 @@ import kotlinx.android.synthetic.main.fragment_twitter_list.view.*
 class TwitterListView(
         override val activity: HomeActivity, override val uiListener: TwitterListContract.View.UI) : MVPView(activity), TwitterListContract.View {
 
-    override val loginTwitterObservable: Observable<TwitterSession> by lazy { getTwitterRx() }
+    override var loginTwitterObservable: Observable<TwitterSession>? = null
 
     override fun createAdapter(userTimeLine: UserTimeline) {
         Log.d("TAG__", "loadGrid")
@@ -54,19 +54,23 @@ class TwitterListView(
     }
 
     private fun getTwitterRx(): Observable<TwitterSession> {
+        Log.d("TAG__", "antes de getTwitterRx")
 
         return Observable.create { subscriber ->
 
             if (Application.component.twitterSession().authToken.secret != null) {
                 TwitterCore.getInstance().sessionManager.clearActiveSession()
             }
+            Log.d("TAG__", "antes de regis")
 
             btnTwitter.callback = object : Callback<TwitterSession>() {
                 override fun success(result: Result<TwitterSession>) {
+                    Log.d("TAG__", "antes de onNext")
                     subscriber.onNext(result.data)
                 }
 
                 override fun failure(exception: TwitterException) {
+                    Log.e("TAG__", "antes de onNext")
                     subscriber.onError(exception)
                 }
 
@@ -76,6 +80,8 @@ class TwitterListView(
 
     override fun showEmptyLogin() {
         llEmpty.visibility = View.VISIBLE
+
+        loginTwitterObservable = getTwitterRx()
     }
 
     override fun hideEmptyLogin() {

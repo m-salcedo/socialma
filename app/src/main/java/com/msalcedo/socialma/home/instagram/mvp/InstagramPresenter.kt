@@ -1,5 +1,9 @@
 package com.msalcedo.socialma.home.instagram.mvp
 
+import android.content.ContentValues.TAG
+import android.util.Log
+import com.msalcedo.socialma.R
+import com.msalcedo.socialma.common.storage.Auth
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
@@ -15,7 +19,6 @@ class InstagramPresenter(
     private val compositeDisposable = CompositeDisposable()
 
     override fun onCreate() {
-
     }
 
     override fun onDestroy() {
@@ -23,22 +26,52 @@ class InstagramPresenter(
     }
 
     override fun initView() {
-        view.setAvatar(model.getAvatar())
-        view.setPosts(model.getPosts())
-        view.setFollowedBy(model.getFollowedBy())
-        view.setFollows(model.getFollows())
-        view.setFullname(model.getFullname())
-        view.setUsername(model.getUsername())
-        view.setDescription(model.getBio())
-        view.setWebSite(model.getWebsite())
 
-        val disposable = model.getMediaRecent()
+        if (model.isInstagram()) {
+            view.setAvatar(model.getAvatar())
+            view.setPosts(model.getPosts())
+            view.setFollowedBy(model.getFollowedBy())
+            view.setFollows(model.getFollows())
+            view.setFullname(model.getFullname())
+            view.setUsername(model.getUsername())
+            view.setDescription(model.getBio())
+            view.setWebSite(model.getWebsite())
+
+            val disposable = model.getMediaRecent()
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe({ success() },
+                            { failed(it) })
+            compositeDisposable.add(disposable)
+            view.hideEmptyLogin()
+        } else {
+            view.showEmptyLogin()
+            compositeDisposable.add(view.loginInstagramObservable!!.subscribe { loginInstagram() })
+        }
+
+    }
+
+    override fun setInstagramToken(accessToken: String?) {
+        view.showProgress(R.string.loading)
+        val authCurrent = model.getAuthCurrent()
+        val auth = Auth(accessToken,
+                authCurrent.tokenTwitter,
+                authCurrent.secretTwitter,
+                authCurrent.userNameTwitter,
+                authCurrent.userIdTwitter)
+        val disposable = model.authInstagram(auth)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe({ success() },
-                        { failed(it) })
+                .subscribe({
+                    view.hideProgress()
+                    initView()
+                }, { failed(it) })
         compositeDisposable.add(disposable)
+    }
 
+    private fun loginInstagram() {
+        Log.d(TAG, "login to ig")
+        view.startInstagram()
     }
 
     private fun success() {

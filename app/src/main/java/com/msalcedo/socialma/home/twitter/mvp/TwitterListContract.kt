@@ -21,7 +21,7 @@ class TwitterListContract {
         fun getTokenInsta(): String?
     }
     interface View: MVPContract.View {
-        val loginTwitterObservable: Observable<TwitterSession>
+        val loginTwitterObservable: Observable<TwitterSession>?
         val uiListener: UI
         fun createAdapter(userTimeLine: UserTimeline)
         fun showEmptyLogin()

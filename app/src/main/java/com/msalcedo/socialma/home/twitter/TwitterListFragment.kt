@@ -1,5 +1,6 @@
 package com.msalcedo.socialma.home.twitter
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import com.msalcedo.socialma.app.Application
 import com.msalcedo.socialma.home.twitter.di.DaggerTwitterListComponent
 import com.msalcedo.socialma.home.twitter.di.TwitterListModule
 import com.msalcedo.socialma.home.twitter.mvp.TwitterListContract
+import kotlinx.android.synthetic.main.fragment_twitter_list.*
 import javax.inject.Inject
 
 /**
@@ -16,6 +18,10 @@ import javax.inject.Inject
  * Copyright (c) 2017 m-salcedo. All rights reserved.
  */
 class TwitterListFragment : Fragment(), TwitterListContract.View.UI {
+
+    companion object {
+        val TAG = "TAG_${TwitterListFragment::class.java.simpleName}"
+    }
 
     @Inject lateinit var view: TwitterListContract.View
     @Inject lateinit var presenter: TwitterListContract.Presenter
@@ -50,5 +56,10 @@ class TwitterListFragment : Fragment(), TwitterListContract.View.UI {
                 .twitterListModule(TwitterListModule(this))
                 .build()
                 .inject(this)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        btnTwitter.onActivityResult(requestCode, resultCode, data)
     }
 }

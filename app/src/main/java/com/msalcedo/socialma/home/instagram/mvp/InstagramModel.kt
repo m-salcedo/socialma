@@ -2,6 +2,7 @@ package com.msalcedo.socialma.home.instagram.mvp
 
 import android.content.res.Resources
 import com.msalcedo.socialma.app.modules.api.UserApi
+import com.msalcedo.socialma.common.storage.Auth
 import com.msalcedo.socialma.common.storage.SessionManager
 import com.msalcedo.socialma.common.storage.instagram.MediaRecent
 import com.msalcedo.socialma.home.base.HomeActivity
@@ -19,6 +20,14 @@ class InstagramModel(
         val sessionManager: SessionManager,
         val userApi: UserApi
 ) : InstagramContract.Model {
+
+    override fun isInstagram(): Boolean {
+        return sessionManager.userInstagram != null
+    }
+
+    override fun getAuthCurrent(): Auth {
+        return sessionManager.auth!!
+    }
 
     override var mediaRecent: MediaRecent? = null
 
@@ -54,14 +63,25 @@ class InstagramModel(
         return sessionManager.userInstagram!!.website!!
     }
 
-
-    override fun getMediaRecent(): Completable =
+    override fun getMediaRecent(): Completable {
+        return if (mediaRecent != null) {
+            Completable.complete()
+        } else {
             userApi.mediaRecent(sessionManager.auth!!.tokenInstagram!!)
                     .doOnSuccess {
                         mediaRecent = it
                     }
                     .toCompletable()
+        }
+    }
 
+    override fun authInstagram(auth: Auth): Completable =
+            userApi.self(auth.tokenInstagram!!)
+                    .doOnSuccess {
+                        sessionManager.auth = auth
+                        sessionManager.userInstagram = it.data
+                    }
+                    .toCompletable()
 
     override fun finish() {
         activity.finish()

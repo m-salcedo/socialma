@@ -22,14 +22,22 @@ class TwitterListModel(
         val myTwitterApiClient: MyTwitterApiClient
 ) : TwitterListContract.Model {
 
+    var userTimeL: UserTimeline? = null
+
     override fun getTokenInsta(): String? {
         return sessionManager.auth!!.tokenInstagram
     }
 
     override fun getUserTimeLine(): UserTimeline {
-        return UserTimeline.Builder()
-                .screenName(sessionManager.userTwitter!!.screenName)
-                .build()
+        if (userTimeL != null) {
+            userTimeL!!
+        } else {
+            userTimeL = UserTimeline.Builder()
+                    .screenName(sessionManager.userTwitter!!.screenName)
+                    .build()
+        }
+
+        return userTimeL!!
     }
 
     override fun isTwitter(): Boolean {

@@ -35,8 +35,6 @@ class GridAdapter(listener: OnGridListener, val picasso: Picasso) : RecyclerView
                 .placeholder(R.drawable.ic_placeholder_square)
                 .into(holder.ivImage, object : Callback {
                     override fun onError() {
-                        Log.e(TAG, "position $position")
-
                     }
 
                     override fun onSuccess() {

@@ -13,7 +13,11 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.layout_center_profile.view.*
 import kotlinx.android.synthetic.main.snippet_top_profile.view.*
 import android.support.v7.widget.GridLayoutManager
+import com.jakewharton.rxbinding2.view.RxView
 import com.msalcedo.socialma.common.storage.instagram.Datum
+import com.msalcedo.socialma.login.InstagramLoginActivity
+import io.reactivex.Observable
+import kotlinx.android.synthetic.main.fragment_instagram.view.*
 
 
 /**
@@ -25,6 +29,8 @@ class InstagramView(
         override val activity: HomeActivity,
         override val uiListener: InstagramContract.View.UI,
         val picasso: Picasso) : MVPView(activity), InstagramContract.View, GridAdapter.OnGridListener {
+
+    override var loginInstagramObservable: Observable<Any>? = null
 
     private lateinit var adapter: GridAdapter
 
@@ -60,17 +66,39 @@ class InstagramView(
         adapter.add((mediaRecent!!.data as ArrayList<Datum>?)!!)
     }
 
+    override fun startInstagram() {
+        InstagramLoginActivity.start(activity)
+    }
+
     override fun setAvatar(avatar: String) {
         picasso.load(avatar)
                 .placeholder(R.drawable.ic_image_profile)
                 .into(ivProfilePhoto)
     }
 
+    private fun getInstagramRx(): Observable<Any> {
+
+        return RxView.clicks(btnInstagram)
+    }
+
+    override fun showEmptyLogin() {
+        llEmpty.visibility = View.VISIBLE
+        relLayoutCenter.visibility = View.GONE
+
+        loginInstagramObservable = getInstagramRx()
+    }
+
+    override fun hideEmptyLogin() {
+        llEmpty.visibility = View.GONE
+        relLayoutCenter.visibility = View.VISIBLE
+
+    }
+
     override fun inflateLayout(container: ViewGroup?): View? {
         val root = inflate(R.layout.fragment_instagram, true)
         uiListener.inflated()
         adapter = GridAdapter(this, picasso)
-        gridView.layoutManager = GridLayoutManager(activity, 3,GridLayoutManager.VERTICAL, false)
+        gridView.layoutManager = GridLayoutManager(activity, 3, GridLayoutManager.VERTICAL, false)
         gridView.adapter = adapter
         return root
     }

@@ -7,20 +7,66 @@
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <android.support.v4.widget.NestedScrollView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <RelativeLayout
-            android:id="@+id/relLayout2"
+        <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentTop="true">
+            android:layout_height="match_parent">
 
-            <include layout="@layout/layout_center_profile" />
+            <RelativeLayout
+                android:id="@+id/relLayoutCenter"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true">
 
-        </RelativeLayout>
+                <include layout="@layout/layout_center_profile" />
 
-    </android.support.v4.widget.NestedScrollView>
+            </RelativeLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+        <!-- Empty view -->
+
+        <LinearLayout
+            android:id="@+id/llEmpty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/spacing.xxxlg"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <TextView
+                style="@style/TextLight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/spacing.lg"
+                android:gravity="center"
+                android:text="@string/empty_login"
+                android:textSize="@dimen/text.lg" />
+
+            <Button
+                android:id="@+id/btnInstagram"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing.md"
+                android:layout_marginStart="@dimen/spacing.md"
+                android:background="@drawable/tw__login_btn"
+                android:drawablePadding="@dimen/tw__login_btn_drawable_padding"
+                android:drawableStart="@drawable/ic_instagram"
+                android:paddingEnd="@dimen/tw__login_btn_right_padding"
+                android:paddingStart="@dimen/tw__login_btn_left_padding"
+                android:text="@string/ig__login_btn_txt"
+                android:textAllCaps="false"
+                android:textColor="@color/tw__solid_white"
+                android:textSize="@dimen/tw__login_btn_text_size" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>
