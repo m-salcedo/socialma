@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.view.GravityCompat
 import android.text.TextUtils
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import com.msalcedo.socialma.R
@@ -17,6 +16,7 @@ import com.msalcedo.socialma.home.base.di.HomeModule
 import com.msalcedo.socialma.home.base.mvp.HomeContract
 import com.msalcedo.socialma.home.instagram.InstagramFragment
 import com.msalcedo.socialma.home.twitter.TwitterListFragment
+import com.msalcedo.socialma.setting.SettingActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.intentFor
 import javax.inject.Inject
@@ -69,14 +69,10 @@ class HomeActivity : RxActivity(), HomeContract.View.DrawerListener {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.nav_manage -> settingsActivity()
+            R.id.nav_manage -> SettingActivity.start(this)
             else -> super.onOptionsItemSelected(item)
         }
         return true
-    }
-
-    private fun settingsActivity() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     private fun showActiveFragment(fragment: Fragment, tag: String) {
@@ -113,7 +109,6 @@ class HomeActivity : RxActivity(), HomeContract.View.DrawerListener {
 
         showActiveFragment(twitterListFragment!!, TwitterListFragment.TAG)
     }
-
 
     override fun mountInstagram() {
 

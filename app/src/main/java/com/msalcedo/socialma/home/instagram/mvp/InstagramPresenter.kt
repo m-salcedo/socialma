@@ -52,6 +52,14 @@ class InstagramPresenter(
         }
     }
 
+    override fun isVisible() {
+        if (!model.isInstagram()) {
+            view.showEmptyLogin()
+        } else {
+            view.hideEmptyLogin()
+        }
+    }
+
     override fun setInstagramToken(accessToken: String?) {
         view.showProgress(R.string.loading)
         val authCurrent = model.getAuthCurrent()

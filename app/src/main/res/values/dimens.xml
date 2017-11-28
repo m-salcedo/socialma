@@ -38,6 +38,7 @@
     <dimen name="view_padding">@dimen/spacing.md</dimen>
     <dimen name="home_header_padding">@dimen/spacing.sm</dimen>
 
+    <dimen name="setting_title_top">25dp</dimen>
     <dimen name="splash_title_margin_top">85dp</dimen>
     <dimen name="splash_subtitle_margin_top">32dp</dimen>
     <dimen name="splash_title">@dimen/spacing.xlg</dimen>
@@ -60,5 +61,6 @@
     <dimen name="dialog_confirm_session.rounded_button">8dp</dimen>
     <dimen name="nav_header_vertical_spacing">8dp</dimen>
     <dimen name="nav_header_height">176dp</dimen>
+    <dimen name="item_recycler_size_normal">56dp</dimen>
 
 </resources>

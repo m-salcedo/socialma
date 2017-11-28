@@ -25,7 +25,13 @@ import javax.inject.Inject
 class LoginActivity : RxActivity() {
 
     companion object {
-        fun start(context: Context) = context.startActivity(context.intentFor<LoginActivity>())
+        fun start(context: Context) {
+            val intent = context.intentFor<LoginActivity>()
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            context.startActivity(intent)
+        }
     }
 
     @Inject lateinit var presenter: LoginContract.Presenter

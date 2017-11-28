@@ -3,7 +3,7 @@ package com.msalcedo.socialma.app.modules.network
 import android.content.Context
 import com.msalcedo.socialma.app.di.AppQualifier
 import com.msalcedo.socialma.app.di.AppScope
-import com.msalcedo.socialma.splash.SplashActivity
+import com.msalcedo.socialma.setting.SettingActivity
 import com.msalcedo.socialma.common.storage.SessionManager
 import com.msalcedo.socialma.utils.Constant
 import okhttp3.Interceptor
@@ -33,7 +33,7 @@ class AuthenticationInterceptor @Inject constructor(
 
         if (code == Constant.Network.Status.UNAUTHORIZED ||
                 code == Constant.Network.Status.FORBIDDEN) {
-            context.apply { startActivity(intentFor<SplashActivity>()) }
+            context.apply { startActivity(intentFor<SettingActivity>()) }
         }
 
         return response

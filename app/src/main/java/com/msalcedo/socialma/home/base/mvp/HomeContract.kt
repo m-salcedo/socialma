@@ -10,11 +10,11 @@ import com.msalcedo.socialma.common.mvp.MVPContract
 class HomeContract {
 
     interface Model : MVPContract.Model, ErrorMessageFactory {
-        fun logout()
         fun getImage(): String
         fun getUserName(): String
         fun getFullname(): String
         fun isTwitter(): Boolean
+        fun isInstagram(): Boolean
     }
 
     interface View : MVPContract.View {
@@ -30,7 +30,6 @@ class HomeContract {
             fun mountTwitter()
             fun mountInstagram()
         }
-
     }
 
     interface Presenter : MVPContract.Presenter

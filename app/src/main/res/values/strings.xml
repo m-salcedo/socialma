@@ -23,6 +23,9 @@
     <string name="title_instagram">Instagram</string>
     <string name="empty_login">Please, to see this section you are required to log in</string>
     <string name="splash_bottom">(c) 2017 m-salcedo</string>
+    <string name="settings_bottom">Handcrafted with ♥ in Puerto Ordaz</string>
+    <string name="ig__logout_btn_txt">Logout Instagram</string>
+    <string name="tw__logout_btn_txt">Logout Twitter</string>
 
 
 </resources>

@@ -1,12 +1,9 @@
 package com.msalcedo.socialma.splash.mvp
 
-import android.util.Log
-import com.msalcedo.socialma.utils.StringHelper
+import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
-import android.R.attr.delay
-import io.reactivex.Observable
 import java.util.concurrent.TimeUnit
 
 

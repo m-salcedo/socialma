@@ -14,6 +14,7 @@ import com.msalcedo.socialma.common.ext.inflate
 import com.msalcedo.socialma.common.mvp.MVPView
 import com.msalcedo.socialma.home.base.HomeActivity
 import com.msalcedo.socialma.home.base.mvp.HomeContract
+import com.msalcedo.socialma.setting.SettingActivity
 import com.squareup.picasso.Picasso
 import io.reactivex.subjects.PublishSubject
 import kotlinx.android.synthetic.main.activity_main.view.*
@@ -89,7 +90,7 @@ class HomeView(
                 drawerListener.mountInstagram()
             }
             R.id.nav_manage -> {
-
+                SettingActivity.start(activity)
             }
         }
         drawer_layout.closeDrawer(GravityCompat.START)

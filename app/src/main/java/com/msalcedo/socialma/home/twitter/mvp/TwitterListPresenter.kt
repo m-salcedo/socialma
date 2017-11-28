@@ -51,6 +51,15 @@ class TwitterListPresenter(
         compositeDisposable.add(disposable)
     }
 
+    override fun isVisible() {
+        if (!model.isTwitter()) {
+            view.showEmptyLogin()
+        } else {
+            view.hideEmptyLogin()
+        }
+    }
+
+
     private fun success() {
         view.hideProgress()
         initView()

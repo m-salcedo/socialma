@@ -34,5 +34,6 @@ class TwitterListContract {
     }
     interface Presenter: MVPContract.Presenter {
         fun initView()
+        fun isVisible()
     }
 }

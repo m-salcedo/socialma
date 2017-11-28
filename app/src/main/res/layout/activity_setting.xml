@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".setting.SettingActivity"
+    tools:ignore="MissingPrefix">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <TextView
+                android:id="@+id/titleTextView"
+                style="@style/Setting.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/spacing.sm"
+                android:text="@string/menu_settings" />
+
+            <LinearLayout
+                android:id="@+id/llTwitterLogout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_recycler_size_normal"
+                android:background="@drawable/selector_transparency"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/spacing.sm"
+                android:paddingRight="@dimen/spacing.sm">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tw__logout_btn_txt"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text.sm" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llInstagramLogout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_recycler_size_normal"
+                android:background="@drawable/selector_transparency"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/spacing.sm"
+                android:paddingRight="@dimen/spacing.sm">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ig__logout_btn_txt"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text.sm" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/spacing.sm"
+            android:paddingLeft="@dimen/spacing.xs"
+            android:paddingRight="@dimen/spacing.xs"
+            android:paddingTop="@dimen/spacing.xs"
+            app:layout_anchor="@id/content"
+            app:layout_anchorGravity="bottom">
+
+            <TextView
+                android:id="@+id/tvVersionName"
+                fontPath="@string/font_bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/splash_bottom"
+                android:textColor="@color/gray_500"
+                android:textSize="@dimen/text.sm"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvHandcrafted"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/settings_bottom"
+                android:textColor="@color/gray_500"
+                android:textSize="@dimen/text.xs" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

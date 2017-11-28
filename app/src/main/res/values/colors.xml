@@ -27,6 +27,10 @@
     <color name="purple_bg">#3A2E42</color>
     <color name="purple_dark_transparent">#77241734</color>
 
+    <color name="black_10_percent">#1f000000</color>
+    <color name="black_30_percent">#4d000000</color>
+    <color name="black_50_percent">#77000000</color>
+    <color name="black_transparency">#CF000000</color>
 
     <color name="green_500">#38DE40</color>
 

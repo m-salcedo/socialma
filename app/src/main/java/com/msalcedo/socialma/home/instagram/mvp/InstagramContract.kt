@@ -53,5 +53,6 @@ class InstagramContract {
     interface Presenter : MVPContract.Presenter {
         fun initView()
         fun setInstagramToken(accessToken: String?)
+        fun isVisible()
     }
 }
