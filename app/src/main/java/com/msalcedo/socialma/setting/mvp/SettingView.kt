@@ -30,18 +30,10 @@ class SettingView(override val activity: RxActivity) : MVPView(activity), Settin
     }
 
     override fun showTwitterButton(isLogin: Boolean) {
-        if (isLogin) {
-            llTwitterLogout.visibility = View.VISIBLE
-        } else {
-            llTwitterLogout.visibility = View.GONE
-        }
+        llTwitterLogout.isClickable = isLogin
     }
 
     override fun showInstagramButton(isLogin: Boolean) {
-        if (isLogin) {
-            llInstagramLogout.visibility = View.VISIBLE
-        } else {
-            llInstagramLogout.visibility = View.GONE
-        }
+        llInstagramLogout.isClickable = isLogin
     }
 }

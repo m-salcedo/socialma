@@ -3,6 +3,7 @@ package com.msalcedo.socialma.home.twitter
 import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -56,6 +57,11 @@ class TwitterListFragment : Fragment(), TwitterListContract.View.UI {
                 .twitterListModule(TwitterListModule(this))
                 .build()
                 .inject(this)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        presenter.isVisible()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

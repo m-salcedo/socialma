@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.view.GravityCompat
 import android.text.TextUtils
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import com.msalcedo.socialma.R
@@ -131,9 +132,9 @@ class HomeActivity : RxActivity(), HomeContract.View.DrawerListener {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (TextUtils.isEmpty(activeFragmentTag) && activeFragmentTag == TwitterListFragment.TAG) {
+        if (twitterListFragment != null) {
             twitterListFragment!!.onActivityResult(requestCode, resultCode, data)
-        } else {
+        } else if (instagramFragment != null) {
             instagramFragment!!.onActivityResult(requestCode, resultCode, data)
         }
     }

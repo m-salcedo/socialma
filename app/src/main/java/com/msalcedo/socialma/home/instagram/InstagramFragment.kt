@@ -78,4 +78,5 @@ class InstagramFragment : Fragment(), InstagramContract.View.UI {
             }
         }
     }
+
 }
