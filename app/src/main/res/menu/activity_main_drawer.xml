@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group
+        android:id="@+id/menu_top"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_twitter"
+            android:icon="@drawable/ic_menu_twitter"
+            android:title="@string/menu_twitter" />
+        <item
+            android:id="@+id/nav_instagram"
+            android:icon="@drawable/ic_menu_instagram"
+            android:title="@string/menu_gallery" />
+
+    </group>
+
+    <group
+        android:id="@+id/menu_bottom"
+        android:checkableBehavior="none">
+
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/ic_menu_settings"
+            android:title="@string/menu_settings" />
+
+    </group>
+
+
+</menu>

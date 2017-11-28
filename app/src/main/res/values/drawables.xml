@@ -1,0 +1,5 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <item name="ic_menu_twitter" type="drawable">@drawable/tw__ic_logo_default</item>
+    <item name="ic_menu_instagram" type="drawable">@drawable/ic_instagram</item>
+    <item name="ic_menu_settings" type="drawable">@drawable/ic_settings</item>
+</resources>
