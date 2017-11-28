@@ -1,5 +1,8 @@
 package com.msalcedo.socialma.utils;
 
+import com.msalcedo.socialma.R;
+import com.msalcedo.socialma.app.Application;
+
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -8,9 +11,6 @@ import org.jetbrains.annotations.Nullable;
  * Copyright (c) 2017 m-salcedo. All rights reserved.
  */
 public interface Constant {
-
-    String CLIENT_IG = "2f6e983101ef4c29b9b85674586223ef";
-    String CLIENT_SECRET_IG = "3b1809aa66ba4f54946e11b387581746";
 
     interface Location {
         public static final long INTERVAL = 60000;
@@ -92,7 +92,8 @@ public interface Constant {
             String REDIRECT_URI = "http://nucleos.io/";
             String AUTH = BASE + "/oauth/authorize/?response_type=token" + Character.OTHER_QUERY +
                     Key.REDIRECT_URI + Character.EQUAL + REDIRECT_URI +
-                    Character.OTHER_QUERY + Key.CLIENT_ID + Character.EQUAL + Constant.CLIENT_IG;
+                    Character.OTHER_QUERY + Key.CLIENT_ID + Character.EQUAL + Application.component
+                    .resources().getString(R.string.INSTAGRAM_CONSUMER_KEY);
             String REDIRECT_URI_TOKEN = REDIRECT_URI + "#access_token=";
             String VERSION = "v1";
 
