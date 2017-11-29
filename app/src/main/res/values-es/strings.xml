@@ -24,17 +24,24 @@
     <string name="empty_login">Por favor, para ver esta sección es requerido que inicie sesión</string>
 
     <string name="splash_bottom">(c) 2017 m-salcedo</string>
+
     <string name="settings_bottom">Hecho a mano con ♥ en Puerto Ordaz</string>
+
     <string name="ig__logout_btn_txt">Salir de Instagram</string>
     <string name="tw__logout_btn_txt">Salir de Twitter</string>
+
     <string name="logout_instagram">Se ha cerrado la sesión de Instagram</string>
     <string name="logout_twitter">Se ha cerrado la sesión de Twitter</string>
+
     <string name="yes">Si</string>
     <string name="no">No</string>
+
     <string name="ig_confirm_logout">¿Estás seguro de que deseas cerrar la sesión de Instagram?</string>
     <string name="tw_confirm_logout">¿Estás seguro de que deseas cerrar la sesión de Twitter?</string>
-    <string name="post">Posts</string>
-    <string name="followers">Followers</string>
+
+    <string name="post">Publicaciones</string>
+    <string name="followers">Seguidores</string>
+    <string name="following">Siguiendo</string>
 
 
 </resources>

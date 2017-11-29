@@ -19,19 +19,28 @@
     <string name="loading">Loading…</string>
 
     <string name="ig__login_btn_txt">Log in with Instagram</string>
+
     <string name="title_twitter">Twitter</string>
+
     <string name="title_instagram">Instagram</string>
+
     <string name="empty_login">Please, to see this section you are required to log in</string>
+
     <string name="splash_bottom">(c) 2017 m-salcedo</string>
     <string name="settings_bottom">Handcrafted with ♥ in Puerto Ordaz</string>
+
     <string name="ig__logout_btn_txt">Logout Instagram</string>
     <string name="tw__logout_btn_txt">Logout Twitter</string>
+
     <string name="logout_instagram">Instagram session closed</string>
     <string name="logout_twitter">Twitter session closed</string>
+
     <string name="yes">Yes</string>
     <string name="no">No</string>
+
     <string name="ig_confirm_logout">Are you sure you want to logout instagram?</string>
     <string name="tw_confirm_logout">Are you sure you want to logout twitter?</string>
+
     <string name="post">Posts</string>
     <string name="followers">Followers</string>
     <string name="following">Following</string>
