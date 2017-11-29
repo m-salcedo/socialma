@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.msalcedo.socialma.home.base.HomeActivity"
+    tools:showIn="@layout/app_bar_main">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <Button
+                android:id="@+id/btnTwitterLogout"
+                style="@style/Button.White"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_recycler_size_normal"
+                android:layout_marginBottom="@dimen/elevation"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/spacing.sm"
+                android:paddingRight="@dimen/spacing.sm"
+                android:text="@string/tw__logout_btn_txt"
+                android:textAllCaps="false"
+                android:textSize="@dimen/text.sm" />
+
+            <Button
+                android:id="@+id/btnInstagramLogout"
+                style="@style/Button.White"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_recycler_size_normal"
+                android:layout_marginBottom="@dimen/elevation"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/spacing.sm"
+                android:paddingRight="@dimen/spacing.sm"
+                android:text="@string/ig__logout_btn_txt"
+                android:textAllCaps="false"
+                android:textSize="@dimen/text.sm">
+
+            </Button>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/spacing.sm"
+            android:paddingLeft="@dimen/spacing.xs"
+            android:paddingRight="@dimen/spacing.xs"
+            android:paddingTop="@dimen/spacing.xs"
+            app:layout_anchor="@id/content"
+            app:layout_anchorGravity="bottom">
+
+            <TextView
+                android:id="@+id/tvVersionName"
+                fontPath="@string/font_bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/splash_bottom"
+                android:textColor="@color/gray_500"
+                android:textSize="@dimen/text.sm"
+                android:textStyle="bold"
+                tools:ignore="MissingPrefix" />
+
+            <TextView
+                android:id="@+id/tvHandcrafted"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/settings_bottom"
+                android:textColor="@color/gray_500"
+                android:textSize="@dimen/text.xs" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

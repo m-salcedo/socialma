@@ -1,8 +1,11 @@
 package com.msalcedo.socialma.common.mvp
 
 import android.app.ProgressDialog
+import android.content.DialogInterface
+import android.support.v7.app.AlertDialog
 import android.widget.FrameLayout
 import com.msalcedo.socialma.common.RxActivity
+import com.msalcedo.socialma.utils.showConfirmation
 import org.jetbrains.anko.indeterminateProgressDialog
 import org.jetbrains.anko.longToast
 import org.jetbrains.anko.toast
@@ -40,5 +43,9 @@ abstract class MVPView(override val activity: RxActivity): FrameLayout(activity)
     override fun showToast(message: String, longTime: Boolean) {
         if (longTime) activity.longToast(message)
         else activity.toast(message)
+    }
+
+    override fun showConfirmation(title: Int, message: Int, listener: DialogInterface.OnClickListener): AlertDialog? {
+        return showConfirmation(activity, title, message, listener)
     }
 }

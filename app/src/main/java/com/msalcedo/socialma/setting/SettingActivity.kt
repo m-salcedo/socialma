@@ -6,6 +6,8 @@ import com.msalcedo.socialma.common.RxActivity
 import com.msalcedo.socialma.setting.di.DaggerSettingComponent
 import com.msalcedo.socialma.setting.di.SettingModule
 import com.msalcedo.socialma.setting.mvp.SettingContract
+import kotlinx.android.synthetic.main.activity_setting.*
+import kotlinx.android.synthetic.main.activity_setting.view.*
 import org.jetbrains.anko.intentFor
 import javax.inject.Inject
 
@@ -33,6 +35,10 @@ class SettingActivity : RxActivity() {
         super.onCreate(savedInstanceState)
         initializeComponent()
         setContentView(view.inflateLayout())
+        toolbar.title = title
+        setSupportActionBar(toolbar)
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        supportActionBar!!.setDisplayShowHomeEnabled(true)
         presenter.onCreate()
     }
 

@@ -1,5 +1,7 @@
 package com.msalcedo.socialma.setting.mvp
 
+import android.content.DialogInterface
+import com.msalcedo.socialma.R
 import io.reactivex.disposables.CompositeDisposable
 
 
@@ -9,14 +11,14 @@ import io.reactivex.disposables.CompositeDisposable
  */
 class SettingPresenter(
         override val view: SettingContract.View,
-        override val model: SettingContract.Model) : SettingContract.Presenter {
+        override val model: SettingContract.Model) : SettingContract.Presenter, DialogInterface.OnClickListener {
 
     private val compositeDisposable = CompositeDisposable()
+    private var insta: Boolean = false
 
     override fun onCreate() {
-        compositeDisposable.add(view.logoutTwitterObservable.subscribe { logoutTwitter() })
-        compositeDisposable.add(view.logoutInstagramObservable.subscribe { logoutInstagram() })
-
+        compositeDisposable.add(view.logoutTwitterObservable.subscribe { logoutTwitterConfitm() })
+        compositeDisposable.add(view.logoutInstagramObservable.subscribe { logoutInstagramConfirm() })
         update()
     }
 
@@ -25,11 +27,30 @@ class SettingPresenter(
         view.showInstagramButton(model.isInstagramLogin)
     }
 
+    private fun logoutTwitterConfitm() {
+        insta = false
+        view.showConfirmation(R.string.tw__logout_btn_txt, R.string.tw_confirm_logout, this)
+    }
+
+    private fun logoutInstagramConfirm() {
+        insta = true
+        view.showConfirmation(R.string.ig__logout_btn_txt, R.string.ig_confirm_logout, this)
+    }
+
+    override fun onClick(p0: DialogInterface?, p1: Int) {
+       if (insta) {
+           logoutInstagram()
+       } else {
+           logoutTwitter()
+       }
+    }
+
     private fun logoutInstagram() {
         model.logoutInstagram()
-        if (!model.isTwitterLogin) {
+       if (!model.isTwitterLogin) {
             model.startLoginActivity()
         } else {
+            view.showToast(R.string.logout_instagram, false)
             update()
         }
     }
@@ -39,8 +60,8 @@ class SettingPresenter(
         if (!model.isInstagramLogin) {
             model.startLoginActivity()
         } else {
+            view.showToast(R.string.logout_twitter, false)
             update()
-
         }
     }
 

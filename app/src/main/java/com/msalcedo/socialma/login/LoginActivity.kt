@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.animation.AlphaAnimation
 import com.msalcedo.socialma.R
 import com.msalcedo.socialma.app.Application

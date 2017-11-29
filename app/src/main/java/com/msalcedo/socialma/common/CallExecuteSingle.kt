@@ -1,7 +1,5 @@
 package com.msalcedo.socialma.common
 
-import io.reactivex.Observable
-import io.reactivex.Observer
 import io.reactivex.Single
 import io.reactivex.SingleObserver
 import io.reactivex.disposables.Disposable
@@ -33,11 +31,15 @@ class CallExecuteSingle<T>(originalCall: Call<T>) : Single<Response<T>>() {
             if (!call.isCanceled) {
                 terminated = true
                 observer?.onSuccess(response)
+            } else {
+                terminated = true
+                observer?.onError(null)
             }
         } catch (t: Throwable) {
             Exceptions.throwIfFatal(t)
             if (terminated) {
                 RxJavaPlugins.onError(t)
+                observer?.onError(t)
             } else if (!call.isCanceled) {
                 try {
                     observer?.onError(t)

@@ -91,7 +91,6 @@ class InstagramView(
     override fun hideEmptyLogin() {
         llEmpty.visibility = View.GONE
         relLayoutCenter.visibility = View.VISIBLE
-
     }
 
     override fun inflateLayout(container: ViewGroup?): View? {

@@ -42,6 +42,7 @@ class InstagramPresenter(
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe({ success() },
                             { failed(it) })
+
             compositeDisposable.add(disposable)
         }
     }
@@ -49,9 +50,9 @@ class InstagramPresenter(
     override fun isVisible() {
         if (!model.isInstagram()) {
             view.showEmptyLogin()
+            compositeDisposable.remove(view.loginInstagramObservable!!.subscribe())
             compositeDisposable.add(view.loginInstagramObservable!!.subscribe { loginInstagram() })
         } else {
-            compositeDisposable.clear()
             view.hideEmptyLogin()
         }
     }

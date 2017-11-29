@@ -1,6 +1,5 @@
 package com.msalcedo.socialma.home.twitter.mvp
 
-import android.util.Log
 import com.msalcedo.socialma.R
 import com.msalcedo.socialma.common.storage.Auth
 import com.twitter.sdk.android.core.TwitterSession
@@ -25,14 +24,11 @@ class TwitterListPresenter(
         compositeDisposable.clear()
     }
 
+
     override fun initView() {
+        isVisible()
         if (model.isTwitter()) {
             view.createAdapter(model.getUserTimeLine())
-            view.hideEmptyLogin()
-        } else {
-            view.showEmptyLogin()
-            compositeDisposable.add(view.loginTwitterObservable!!
-                    .subscribe({ twitterSession -> loginTwitter(twitterSession) }))
         }
     }
 
@@ -43,6 +39,7 @@ class TwitterListPresenter(
                 twitterSession.authToken.secret,
                 twitterSession.userName,
                 twitterSession.userId)
+
         val disposable = model.authTwitter(auth)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -54,11 +51,13 @@ class TwitterListPresenter(
     override fun isVisible() {
         if (!model.isTwitter()) {
             view.showEmptyLogin()
+            compositeDisposable.remove(view.loginTwitterObservable!!.subscribe())
+            compositeDisposable.add(view.loginTwitterObservable!!.subscribe
+            ({ twitterSession -> loginTwitter(twitterSession) }))
         } else {
             view.hideEmptyLogin()
         }
     }
-
 
     private fun success() {
         view.hideProgress()
@@ -69,6 +68,4 @@ class TwitterListPresenter(
         view.showToast(model.getErrorMessage(it))
         view.hideProgress()
     }
-
-
 }

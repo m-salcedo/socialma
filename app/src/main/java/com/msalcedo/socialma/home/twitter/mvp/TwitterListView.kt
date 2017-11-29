@@ -27,6 +27,12 @@ class TwitterListView(
 
     override var loginTwitterObservable: Observable<TwitterSession>? = null
 
+    override fun inflateLayout(container: ViewGroup?): View? {
+        val root = inflate(R.layout.fragment_twitter_list, true)
+        uiListener.inflated()
+        return root
+    }
+
     override fun createAdapter(userTimeLine: UserTimeline) {
 
         val adapter = TweetTimelineListAdapter.Builder(activity)
@@ -60,17 +66,14 @@ class TwitterListView(
 
     override fun showEmptyLogin() {
         llEmpty.visibility = View.VISIBLE
+        twitterList.visibility = View.GONE
 
         loginTwitterObservable = getTwitterRx()
     }
 
     override fun hideEmptyLogin() {
         llEmpty.visibility = View.GONE
-    }
+        twitterList.visibility = View.VISIBLE
 
-    override fun inflateLayout(container: ViewGroup?): View? {
-        val root = inflate(R.layout.fragment_twitter_list, true)
-        uiListener.inflated()
-        return root
     }
 }

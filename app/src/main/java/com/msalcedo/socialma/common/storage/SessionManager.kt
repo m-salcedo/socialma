@@ -84,7 +84,6 @@ class SessionManager @Inject constructor(@AppQualifier context: Context, moshi: 
                 authAdapter.fromJson(preferences.getString(Constant.Key.AUTH, ""))
             } catch (error: Exception) {
                 Log.e(TAG, error.message)
-                error.printStackTrace()
                 null
             }
         }
@@ -104,7 +103,6 @@ class SessionManager @Inject constructor(@AppQualifier context: Context, moshi: 
                 userInstagramAdapter.fromJson(preferences.getString(Constant.Key.USER_INSTAGRAM, ""))
             } catch (error: Exception) {
                 Log.e(TAG, error.message)
-                error.printStackTrace()
                 null
             }
         }
@@ -124,7 +122,6 @@ class SessionManager @Inject constructor(@AppQualifier context: Context, moshi: 
                 userTwitterAdapter.fromJson(preferences.getString(Constant.Key.USER_TWITTER, ""))
             } catch (error: Exception) {
                 Log.e(TAG, error.message)
-                error.printStackTrace()
                 null
             }
         }

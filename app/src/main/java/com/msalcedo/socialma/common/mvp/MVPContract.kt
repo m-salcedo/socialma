@@ -1,5 +1,7 @@
 package com.msalcedo.socialma.common.mvp
 
+import android.content.DialogInterface
+import android.support.v7.app.AlertDialog
 import android.view.ViewGroup
 import com.msalcedo.socialma.common.RxActivity
 
@@ -19,6 +21,7 @@ abstract class MVPContract {
         fun showProgress(message: String, cancelable: Boolean = false)
         fun showProgress(message: Int, cancelable: Boolean = false)
         fun hideProgress()
+        fun showConfirmation(title: Int, message: Int, listener: DialogInterface.OnClickListener): AlertDialog?
     }
 
     interface Presenter {
