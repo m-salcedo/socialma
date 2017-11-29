@@ -3,6 +3,7 @@
 Contents table
 -----------------
 
+- [Apk installable - link](https://drive.google.com/open?id=1-FC6yN-s26IumS-1a366yQKyvJ8jfENH)
 - [Technical specifications](#technical-specifications)
 - [Structure](#structure)
 - [Version control](#version)
