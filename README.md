@@ -28,7 +28,7 @@ Structure
 Version
 ---------------
 
-       // Versions of the build
+        // Versions of the build
         min_sdk_version = '17'
         target_sdk_version = '26'
         compile_sdk_version = 26
@@ -41,7 +41,6 @@ Version
 
         // Versions of dependencies
         android_support_version = '27.0.1'
-        aws_sdk_version = "2.4.4"
         calligraphy_version = '2.2.0'
         dagger_version = '2.9'
         google_service_version = '3.1.0'
@@ -62,7 +61,9 @@ Libraries
 ```bash
 dependencies {
 
-// ---------- Android support ----------
+implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // ---------- Android support ----------
     implementation "com.android.support:appcompat-v7:$android_support_version"
     implementation "com.android.support:support-v4:$android_support_version"
     implementation "com.android.support:design:$android_support_version"
@@ -105,11 +106,6 @@ dependencies {
     // ---------- Joda-time ----------
     implementation "joda-time:joda-time:$joda_time_version"
 
-    // ---------- Aws ----------
-    implementation "com.amazonaws:aws-android-sdk-core:$aws_sdk_version"
-    implementation "com.amazonaws:aws-android-sdk-s3:$aws_sdk_version"
-    implementation "com.amazonaws:aws-android-sdk-ddb:$aws_sdk_version"
-
     // ---------- Twitter ----------
     implementation 'com.twitter.sdk.android:twitter:3.1.1'
     implementation 'com.twitter.sdk.android:twitter-mopub:3.1.1'
@@ -117,4 +113,6 @@ dependencies {
     // ---------- Test ----------
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    testImplementation 'junit:junit:4.12'
 }

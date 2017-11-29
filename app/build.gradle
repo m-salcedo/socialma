@@ -80,11 +80,6 @@ dependencies {
     // ---------- Joda-time ----------
     implementation "joda-time:joda-time:$joda_time_version"
 
-    // ---------- Aws ----------
-    implementation "com.amazonaws:aws-android-sdk-core:$aws_sdk_version"
-    implementation "com.amazonaws:aws-android-sdk-s3:$aws_sdk_version"
-    implementation "com.amazonaws:aws-android-sdk-ddb:$aws_sdk_version"
-
     // ---------- Twitter ----------
     implementation 'com.twitter.sdk.android:twitter:3.1.1'
     implementation 'com.twitter.sdk.android:twitter-mopub:3.1.1'
