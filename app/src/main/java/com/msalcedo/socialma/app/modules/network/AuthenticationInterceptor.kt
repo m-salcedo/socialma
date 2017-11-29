@@ -3,8 +3,8 @@ package com.msalcedo.socialma.app.modules.network
 import android.content.Context
 import com.msalcedo.socialma.app.di.AppQualifier
 import com.msalcedo.socialma.app.di.AppScope
-import com.msalcedo.socialma.setting.SettingActivity
 import com.msalcedo.socialma.common.storage.SessionManager
+import com.msalcedo.socialma.setting.SettingActivity
 import com.msalcedo.socialma.utils.Constant
 import okhttp3.Interceptor
 import okhttp3.Response

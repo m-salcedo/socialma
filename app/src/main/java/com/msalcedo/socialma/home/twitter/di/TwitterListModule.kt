@@ -10,7 +10,6 @@ import com.msalcedo.socialma.home.twitter.mvp.TwitterListModel
 import com.msalcedo.socialma.home.twitter.mvp.TwitterListPresenter
 import com.msalcedo.socialma.home.twitter.mvp.TwitterListView
 import com.squareup.moshi.Moshi
-import com.twitter.sdk.android.core.TwitterSession
 import dagger.Module
 import dagger.Provides
 

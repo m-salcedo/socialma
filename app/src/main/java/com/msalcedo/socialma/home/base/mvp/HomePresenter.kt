@@ -1,8 +1,6 @@
 package com.msalcedo.socialma.home.base.mvp
 
-import android.content.Intent
 import com.msalcedo.socialma.R
-import com.msalcedo.socialma.login.LoginActivity
 
 /**
  * Created by Mariangela Salcedo (msalcedo047@gmail.com) on 11/25/17.

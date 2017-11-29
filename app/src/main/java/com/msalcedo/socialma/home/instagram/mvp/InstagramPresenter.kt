@@ -1,7 +1,5 @@
 package com.msalcedo.socialma.home.instagram.mvp
 
-import android.content.ContentValues.TAG
-import android.util.Log
 import com.msalcedo.socialma.R
 import com.msalcedo.socialma.common.storage.Auth
 import io.reactivex.android.schedulers.AndroidSchedulers

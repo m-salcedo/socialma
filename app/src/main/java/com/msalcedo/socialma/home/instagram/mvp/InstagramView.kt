@@ -1,23 +1,23 @@
 package com.msalcedo.socialma.home.instagram.mvp
 
 import android.annotation.SuppressLint
+import android.support.v7.widget.GridLayoutManager
 import android.view.View
 import android.view.ViewGroup
+import com.jakewharton.rxbinding2.view.RxView
 import com.msalcedo.socialma.R
 import com.msalcedo.socialma.common.ext.inflate
 import com.msalcedo.socialma.common.mvp.MVPView
+import com.msalcedo.socialma.common.storage.instagram.Datum
 import com.msalcedo.socialma.common.storage.instagram.MediaRecent
 import com.msalcedo.socialma.home.base.HomeActivity
 import com.msalcedo.socialma.home.instagram.utils.GridAdapter
-import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.layout_center_profile.view.*
-import kotlinx.android.synthetic.main.snippet_top_profile.view.*
-import android.support.v7.widget.GridLayoutManager
-import com.jakewharton.rxbinding2.view.RxView
-import com.msalcedo.socialma.common.storage.instagram.Datum
 import com.msalcedo.socialma.login.InstagramLoginActivity
+import com.squareup.picasso.Picasso
 import io.reactivex.Observable
 import kotlinx.android.synthetic.main.fragment_instagram.view.*
+import kotlinx.android.synthetic.main.layout_center_profile.view.*
+import kotlinx.android.synthetic.main.snippet_top_profile.view.*
 
 
 /**

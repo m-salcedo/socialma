@@ -1,10 +1,10 @@
 package com.msalcedo.socialma.app.modules.api
 
 
-import dagger.Module
-import dagger.Provides
 import com.msalcedo.socialma.app.di.AppScope
 import com.msalcedo.socialma.app.modules.network.RetrofitModule
+import dagger.Module
+import dagger.Provides
 import retrofit2.Retrofit
 
 /**

@@ -7,7 +7,6 @@ import com.msalcedo.socialma.common.storage.Auth
 import com.twitter.sdk.android.core.TwitterSession
 import io.reactivex.Completable
 import io.reactivex.Observable
-import io.reactivex.disposables.Disposable
 
 /**
  * Created by Mariangela Salcedo (msalcedo047@gmail.com) on 11/25/17.

@@ -1,6 +1,5 @@
 package com.msalcedo.socialma.login.mvp
 
-import android.util.Log
 import com.msalcedo.socialma.R
 import com.msalcedo.socialma.common.storage.Auth
 import com.twitter.sdk.android.core.TwitterSession

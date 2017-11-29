@@ -11,7 +11,6 @@ import com.msalcedo.socialma.home.instagram.mvp.InstagramPresenter
 import com.msalcedo.socialma.home.instagram.mvp.InstagramView
 import com.squareup.moshi.Moshi
 import com.squareup.picasso.Picasso
-import com.twitter.sdk.android.core.TwitterSession
 import dagger.Module
 import dagger.Provides
 

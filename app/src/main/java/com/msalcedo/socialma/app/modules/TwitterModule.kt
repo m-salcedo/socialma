@@ -1,12 +1,14 @@
 package com.msalcedo.socialma.app.modules
 
-import com.msalcedo.socialma.app.di.AppScope
-import dagger.Module
-import dagger.Provides
 import com.msalcedo.socialma.app.di.AppModule
+import com.msalcedo.socialma.app.di.AppScope
 import com.msalcedo.socialma.app.modules.api.MyTwitterApiClient
 import com.msalcedo.socialma.app.modules.network.NetworkModule
-import com.twitter.sdk.android.core.*
+import com.twitter.sdk.android.core.TwitterAuthToken
+import com.twitter.sdk.android.core.TwitterCore
+import com.twitter.sdk.android.core.TwitterSession
+import dagger.Module
+import dagger.Provides
 import okhttp3.OkHttpClient
 
 

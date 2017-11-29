@@ -1,6 +1,5 @@
 package com.msalcedo.socialma.app.modules.network
 
-import android.util.Log
 import android.webkit.WebChromeClient
 import android.webkit.WebView
 

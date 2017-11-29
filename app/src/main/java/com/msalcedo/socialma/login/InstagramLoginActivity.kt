@@ -3,6 +3,8 @@ package com.msalcedo.socialma.login
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.webkit.CookieManager
+import android.webkit.CookieSyncManager
 import android.widget.Toast
 import com.msalcedo.socialma.R
 import com.msalcedo.socialma.app.modules.network.InstagramWebChromeClient
@@ -46,6 +48,9 @@ class InstagramLoginActivity : RxActivity() {
         webView.clearCache(true)
         webView.webViewClient = instagramClient
         webView.webChromeClient = InstagramWebChromeClient()
+        CookieSyncManager.createInstance(this)
+        val cookieManager = CookieManager.getInstance()
+        cookieManager.removeAllCookie()
         webView.loadUrl(Constant.Url.Instagram.AUTH)
     }
 

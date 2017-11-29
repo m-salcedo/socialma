@@ -5,7 +5,6 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
 import android.view.animation.AlphaAnimation
 import com.msalcedo.socialma.R
 import com.msalcedo.socialma.app.Application

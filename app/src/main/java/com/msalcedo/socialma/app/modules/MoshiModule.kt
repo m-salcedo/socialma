@@ -1,10 +1,10 @@
 package com.msalcedo.socialma.app.modules
 
+import com.msalcedo.socialma.app.di.AppScope
+import com.msalcedo.socialma.app.di.FlatObjectsQualifier
 import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
-import com.msalcedo.socialma.app.di.AppScope
-import com.msalcedo.socialma.app.di.FlatObjectsQualifier
 
 /**
  * Created by Mariangela Salcedo (msalcedo047@gmail.com) on 11/25/17.

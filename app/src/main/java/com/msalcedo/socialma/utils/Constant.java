@@ -3,9 +3,6 @@ package com.msalcedo.socialma.utils;
 import com.msalcedo.socialma.R;
 import com.msalcedo.socialma.app.Application;
 
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
 /**
  * Created by Mariangela Salcedo (msalcedo047@gmail.com) on 11/25/17.
  * Copyright (c) 2017 m-salcedo. All rights reserved.

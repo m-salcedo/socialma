@@ -1,8 +1,6 @@
 package com.msalcedo.socialma.setting.mvp
 
 import android.app.Activity
-import android.app.Activity.RESULT_OK
-import com.msalcedo.socialma.R
 import com.msalcedo.socialma.common.storage.Auth
 import com.msalcedo.socialma.common.storage.SessionManager
 import com.msalcedo.socialma.login.LoginActivity

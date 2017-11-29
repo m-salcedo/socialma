@@ -2,9 +2,9 @@ package com.msalcedo.socialma.app.di
 
 import android.content.Context
 import android.content.res.Resources
+import com.msalcedo.socialma.app.Application
 import dagger.Module
 import dagger.Provides
-import com.msalcedo.socialma.app.Application
 
 /**
  * Created by Mariangela Salcedo (msalcedo047@gmail.com) on 11/25/17.

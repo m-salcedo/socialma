@@ -1,7 +1,6 @@
 package com.msalcedo.socialma.login.mvp
 
 import android.content.res.Resources
-import android.util.Log
 import com.msalcedo.socialma.app.modules.api.MyTwitterApiClient
 import com.msalcedo.socialma.app.modules.api.MyTwitterApiClient.Companion.completableTwitterAuth
 import com.msalcedo.socialma.app.modules.api.UserApi
@@ -9,7 +8,6 @@ import com.msalcedo.socialma.common.storage.Auth
 import com.msalcedo.socialma.common.storage.SessionManager
 import com.msalcedo.socialma.home.base.HomeActivity
 import com.msalcedo.socialma.login.LoginActivity
-import com.msalcedo.socialma.utils.StringHelper
 import com.squareup.moshi.Moshi
 import io.reactivex.Completable
 

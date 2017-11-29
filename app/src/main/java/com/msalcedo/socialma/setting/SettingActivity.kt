@@ -7,7 +7,6 @@ import com.msalcedo.socialma.setting.di.DaggerSettingComponent
 import com.msalcedo.socialma.setting.di.SettingModule
 import com.msalcedo.socialma.setting.mvp.SettingContract
 import kotlinx.android.synthetic.main.activity_setting.*
-import kotlinx.android.synthetic.main.activity_setting.view.*
 import org.jetbrains.anko.intentFor
 import javax.inject.Inject
 

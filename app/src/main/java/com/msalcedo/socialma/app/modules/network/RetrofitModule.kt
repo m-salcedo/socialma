@@ -2,13 +2,13 @@ package com.msalcedo.socialma.app.modules.network
 
 import android.content.res.Resources
 import com.msalcedo.socialma.R
-import com.squareup.moshi.Moshi
-import dagger.Module
-import dagger.Provides
 import com.msalcedo.socialma.app.di.AppScope
 import com.msalcedo.socialma.app.di.AuthenticationQualifier
 import com.msalcedo.socialma.app.di.BaseUrlQualifier
 import com.msalcedo.socialma.app.di.FlatObjectsQualifier
+import com.squareup.moshi.Moshi
+import dagger.Module
+import dagger.Provides
 import okhttp3.OkHttpClient
 import retrofit2.CallAdapter
 import retrofit2.Converter

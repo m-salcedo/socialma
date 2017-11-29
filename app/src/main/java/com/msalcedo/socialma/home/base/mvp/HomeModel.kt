@@ -3,7 +3,6 @@ package com.msalcedo.socialma.home.base.mvp
 import android.content.res.Resources
 import com.msalcedo.socialma.common.storage.SessionManager
 import com.msalcedo.socialma.home.base.HomeActivity
-import com.msalcedo.socialma.setting.SettingActivity
 import com.squareup.moshi.Moshi
 
 /**

@@ -2,9 +2,9 @@ package com.msalcedo.socialma.common.mvp
 
 import android.content.res.Resources
 import com.msalcedo.socialma.R
+import com.msalcedo.socialma.models.ResponseError
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
-import com.msalcedo.socialma.models.ResponseError
 import retrofit2.HttpException
 import java.io.IOException
 

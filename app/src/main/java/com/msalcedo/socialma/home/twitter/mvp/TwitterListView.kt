@@ -1,7 +1,6 @@
 package com.msalcedo.socialma.home.twitter.mvp
 
 import android.annotation.SuppressLint
-import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import com.msalcedo.socialma.R
@@ -9,9 +8,7 @@ import com.msalcedo.socialma.app.Application
 import com.msalcedo.socialma.common.ext.inflate
 import com.msalcedo.socialma.common.mvp.MVPView
 import com.msalcedo.socialma.home.base.HomeActivity
-import com.msalcedo.socialma.utils.StringHelper
 import com.twitter.sdk.android.core.*
-import com.twitter.sdk.android.core.models.Tweet
 import com.twitter.sdk.android.tweetui.TweetTimelineListAdapter
 import com.twitter.sdk.android.tweetui.UserTimeline
 import io.reactivex.Observable

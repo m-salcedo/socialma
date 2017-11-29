@@ -11,7 +11,7 @@ import android.support.v4.content.ContextCompat
 import android.util.AttributeSet
 import android.view.View
 import com.msalcedo.socialma.R
-import java.util.ArrayList
+import java.util.*
 
 /**
  * Created by Mariangela Salcedo (msalcedo047@gmail.com) on 11/28/17.

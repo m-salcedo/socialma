@@ -1,13 +1,11 @@
 package com.msalcedo.socialma.home.twitter.mvp
 
 import android.content.res.Resources
-import android.util.Log
 import com.msalcedo.socialma.app.modules.api.MyTwitterApiClient
 import com.msalcedo.socialma.app.modules.api.MyTwitterApiClient.Companion.completableTwitterAuth
 import com.msalcedo.socialma.common.storage.Auth
 import com.msalcedo.socialma.common.storage.SessionManager
 import com.msalcedo.socialma.home.base.HomeActivity
-import com.msalcedo.socialma.utils.StringHelper
 import com.squareup.moshi.Moshi
 import com.twitter.sdk.android.tweetui.UserTimeline
 import io.reactivex.Completable

@@ -9,7 +9,6 @@ import com.msalcedo.socialma.home.base.mvp.HomePresenter
 import com.msalcedo.socialma.home.base.mvp.view.HomeView
 import com.squareup.moshi.Moshi
 import com.squareup.picasso.Picasso
-import com.twitter.sdk.android.core.TwitterSession
 import dagger.Module
 import dagger.Provides
 
