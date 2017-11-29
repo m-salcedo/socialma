@@ -6,7 +6,7 @@
     android:background="@android:color/black"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context=".loginTwitter.LoginActivity">
+    tools:context=".login.LoginActivity">
 
     <ImageView
         style="@style/Splash.Container"

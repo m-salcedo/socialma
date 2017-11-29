@@ -15,7 +15,7 @@ import com.squareup.picasso.Picasso
  * Created by Mariangela Salcedo (msalcedo047@gmail.com) on 11/19/17.
  * Copyright (c) 2017 m-salcedo. All rights reserved.
  */
-class GridAdapter(listener: OnGridListener, val picasso: Picasso) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class GridAdapter(val picasso: Picasso) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val TAG = "TAG_${GridAdapter::class.java.simpleName}"
 

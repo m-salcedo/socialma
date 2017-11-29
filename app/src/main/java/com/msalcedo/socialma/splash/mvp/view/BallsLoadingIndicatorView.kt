@@ -40,24 +40,24 @@ class BallsLoadingIndicatorView : View {
 
 
     constructor(context: Context) : super(context) {
-        init(null, 0)
+        init()
     }
 
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {
-        init(attrs, 0)
+        init()
     }
 
     constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
-        init(attrs, defStyleAttr)
+        init()
     }
 
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int, defStyleRes: Int) : super(context, attrs, defStyleAttr, defStyleRes) {
-        init(attrs, defStyleAttr)
+        init()
     }
 
-    private fun init(attrs: AttributeSet?, defStyle: Int) {
+    private fun init() {
         mIndicatorId = 0
         mIndicatorColor = Color.GRAY
 
@@ -96,7 +96,7 @@ class BallsLoadingIndicatorView : View {
     }
 
     private fun measureDimension(defaultSize: Int, measureSpec: Int): Int {
-        var result = defaultSize
+        var result: Int
         val specMode = View.MeasureSpec.getMode(measureSpec)
         val specSize = View.MeasureSpec.getSize(measureSpec)
         if (specMode == View.MeasureSpec.EXACTLY) {

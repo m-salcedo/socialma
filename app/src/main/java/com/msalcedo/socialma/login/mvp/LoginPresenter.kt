@@ -30,7 +30,6 @@ class LoginPresenter(
     }
 
     private fun loginInstagram() {
-        Log.d(TAG, "login to ig")
         view.startInstagram()
     }
 

@@ -41,12 +41,10 @@ class LoginView(override val activity: RxActivity) : MVPView(activity), LoginCon
             btnTwitter.callback = object : Callback<TwitterSession>() {
                 override fun success(result: Result<TwitterSession>) {
                     subscriber.onNext(result.data)
-                    Log.d("test", StringHelper().toString(result.data.userName))
                 }
 
                 override fun failure(exception: TwitterException) {
                     subscriber.onError(exception)
-                    Log.e("test", StringHelper().toString(exception), exception)
                 }
 
             }

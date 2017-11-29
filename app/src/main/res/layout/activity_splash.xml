@@ -35,8 +35,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center_horizontal"
         android:layout_marginBottom="@dimen/spacing.md"
-        android:textColor="@color/black"
         android:text="@string/splash_bottom"
-        android:visibility="visible"/>
+        android:textColor="@color/black"
+        android:visibility="visible" />
 
 </FrameLayout>

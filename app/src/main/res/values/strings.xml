@@ -26,12 +26,12 @@
     <string name="settings_bottom">Handcrafted with ♥ in Puerto Ordaz</string>
     <string name="ig__logout_btn_txt">Logout Instagram</string>
     <string name="tw__logout_btn_txt">Logout Twitter</string>
-    <string name="logout_instagram">Se ha cerrado la sesión de Instagram</string>
-    <string name="logout_twitter">Se ha cerrado la sesión de Twitter</string>
+    <string name="logout_instagram">Instagram session closed</string>
+    <string name="logout_twitter">Twitter session closed</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
-    <string name="ig_confirm_logout">Are you sure that logout instagram?</string>
-    <string name="tw_confirm_logout">Are you sure that logout twitter?</string>
+    <string name="ig_confirm_logout">Are you sure you want to logout instagram?</string>
+    <string name="tw_confirm_logout">Are you sure you want to logout twitter?</string>
 
 
 </resources>

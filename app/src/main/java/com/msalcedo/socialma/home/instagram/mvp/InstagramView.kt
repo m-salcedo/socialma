@@ -96,7 +96,7 @@ class InstagramView(
     override fun inflateLayout(container: ViewGroup?): View? {
         val root = inflate(R.layout.fragment_instagram, true)
         uiListener.inflated()
-        adapter = GridAdapter(this, picasso)
+        adapter = GridAdapter(picasso)
         gridView.layoutManager = GridLayoutManager(activity, 3, GridLayoutManager.VERTICAL, false)
         gridView.isNestedScrollingEnabled = false
         gridView.adapter = adapter
