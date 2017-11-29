@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.animation.AlphaAnimation
 import com.msalcedo.socialma.R
@@ -14,6 +15,7 @@ import com.msalcedo.socialma.login.di.DaggerLoginComponent
 import com.msalcedo.socialma.login.di.LoginModule
 import com.msalcedo.socialma.login.mvp.LoginContract
 import com.msalcedo.socialma.utils.Constant
+import com.twitter.sdk.android.core.identity.TwitterAuthClient
 import kotlinx.android.synthetic.main.form_login.*
 import org.jetbrains.anko.intentFor
 import javax.inject.Inject
@@ -62,7 +64,14 @@ class LoginActivity : RxActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        btnTwitter.onActivityResult(requestCode, resultCode, data)
+
+        val twitterAuthClient = TwitterAuthClient()
+        if (twitterAuthClient.requestCode == requestCode && resultCode != AppCompatActivity.RESULT_CANCELED) {
+            btnTwitter.onActivityResult(requestCode, resultCode, data)
+        }
+        else {
+            twitterAuthClient.cancelAuthorize()
+        }
 
         if (requestCode == INSTAGRAM_LOGIN) {
             when (resultCode) {

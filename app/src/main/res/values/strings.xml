@@ -32,6 +32,9 @@
     <string name="no">No</string>
     <string name="ig_confirm_logout">Are you sure you want to logout instagram?</string>
     <string name="tw_confirm_logout">Are you sure you want to logout twitter?</string>
+    <string name="post">Posts</string>
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
 
 
 </resources>

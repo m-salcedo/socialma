@@ -3,6 +3,7 @@ package com.msalcedo.socialma.home.twitter
 import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import com.msalcedo.socialma.app.Application
 import com.msalcedo.socialma.home.twitter.di.DaggerTwitterListComponent
 import com.msalcedo.socialma.home.twitter.di.TwitterListModule
 import com.msalcedo.socialma.home.twitter.mvp.TwitterListContract
+import com.twitter.sdk.android.core.identity.TwitterAuthClient
 import kotlinx.android.synthetic.main.fragment_twitter_list.*
 import javax.inject.Inject
 
@@ -66,6 +68,11 @@ class TwitterListFragment : Fragment(), TwitterListContract.View.UI {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        btnTwitter.onActivityResult(requestCode, resultCode, data)
+        val twitterAuthClient = TwitterAuthClient()
+        if (twitterAuthClient.requestCode == requestCode && resultCode != AppCompatActivity.RESULT_CANCELED) {
+            btnTwitter.onActivityResult(requestCode, resultCode, data)
+        } else {
+            twitterAuthClient.cancelAuthorize()
+        }
     }
 }
