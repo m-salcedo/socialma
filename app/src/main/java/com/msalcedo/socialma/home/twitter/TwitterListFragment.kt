@@ -25,8 +25,10 @@ class TwitterListFragment : Fragment(), TwitterListContract.View.UI {
         val TAG = "TAG_${TwitterListFragment::class.java.simpleName}"
     }
 
-    @Inject lateinit var view: TwitterListContract.View
-    @Inject lateinit var presenter: TwitterListContract.Presenter
+    @Inject
+    lateinit var view: TwitterListContract.View
+    @Inject
+    lateinit var presenter: TwitterListContract.Presenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

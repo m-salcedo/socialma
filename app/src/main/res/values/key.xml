@@ -1,11 +1,11 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <string name="TWITTER_CONSUMER_KEY">vUspmd6x5XXKolUFHRQ47iCNp</string>
-    <string name="TWITTER_CONSUMER_SECRET">	ydajkmu0YKAeICkagxkLpxXC0AK4zkQ3KARI6QjkDVwW3Tfgm2</string>
+    <string android:name="com.twitter.sdk.android.CONSUMER_KEY" name="TWITTER_CONSUMER_KEY" translatable="false">vUspmd6x5XXKolUFHRQ47iCNp</string>
+    <string android:name="com.twitter.sdk.android.CONSUMER_SECRET" name="TWITTER_CONSUMER_SECRET" translatable="false">ydajkmu0YKAeICkagxkLpxXC0AK4zkQ3KARI6QjkDVwW3Tfgm2</string>
 
-    <string name="INSTAGRAM_CONSUMER_KEY">2f6e983101ef4c29b9b85674586223ef</string>
-    <string name="INSTAGRAM_CONSUMER_SECRET">3b1809aa66ba4f54946e11b387581746</string>
+    <string name="INSTAGRAM_CONSUMER_KEY" translatable="false">2f6e983101ef4c29b9b85674586223ef</string>
+    <string name="INSTAGRAM_CONSUMER_SECRET" translatable="false">3b1809aa66ba4f54946e11b387581746</string>
 
-    <string name="url_api_current">https://api.instagram.com</string>
+    <string name="url_api_current" translatable="false">https://api.instagram.com</string>
 
 </resources>
